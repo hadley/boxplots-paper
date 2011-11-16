@@ -25,8 +25,6 @@
 
 \section{Introduction}
 
-\citep[pg. 164]{spear:1952}
-
 John Tukey introduced the box and whiskers plot as part of his toolkit for  exploratory data analysis \citep{tukey:1970}, but they did not become widely known until official publication \citep{EDA}. Today, over 40 years later, the boxplot has become one of the most frequently used statistical graphics, one of the few plot types invented in the 20th century that has found widespread adoption. 
 
 The boxplot is a compact distributional summary, displaying less detail than a histogram or kernel density, but also taking up less space. Boxplots are commonly used to compare the distribution across multiple groups. Tukey designed them specifically to compare batches. Due to their elegance and practicality, boxplots have spawned a wealth of variations and enhancement. This paper pulls these together in one place, showing how the boxplot has evolved.
@@ -38,17 +36,17 @@ The R code used to create all plots is available in the online supplementary mat
 \section{Tukey's boxplot}
 \label{sec:tukey}
 
-Today, what we call a boxplot is more closely related to what Tukey originally called a schematic plot, a box and whiskers plot with some special restrictions. Tukey suggested using dashed lines for the more precise schematic plot, and solid lines for the box-and-whisker plot. Today many of these characteristics are typically omitted: don't label individual points.
+The basic graphic form of what we now call a boxplot, the range-bar, was established in the early 50's \citet[pg. 164]{spear:1952}. Tukey's contribution was to think deeply about appropriate summary statistics that worked for a wide range of data and to connect those to the components of the range bar. Today, what we call a boxplot is more closely related to what Tukey called a schematic plot, a box and whiskers plot with some special restrictions on the summary statistics used. % Tukey suggested using dashed lines for the more precise schematic plot, and solid lines for the box-and-whisker plot.
 
-Our notation resembles Tukey's original definition except where we can be mre precise.  The boxplot is made up of five components, carefully chosen to give a robust summary of the distribution of a dataset:
+The boxplot is made up of five components, carefully chosen to give a robust summary of the distribution of a dataset:
 
 \begin{itemize}
 
 \item the \emph{median},
 
-\item two \emph{hinges}, the upper and lower quartiles,
+\item two \emph{hinges}, the upper and lower fourths (quartiles),
 
-\item the data values adjacent to upper and lower \emph{fences}, (where adjacent is taken to be closer to the middle),
+\item the data values adjacent to upper and lower \emph{fences}, which lie 1.5 inter-fourth ranges from the median and where adjacent is taken to be closer to the middle,
 
 \item two \emph{whiskers} that connect the hinges to the fences, and
 
@@ -56,18 +54,18 @@ Our notation resembles Tukey's original definition except where we can be mre pr
 
 \end{itemize}
 
-\noindent These elements are summarised in Figure~\ref{fig:construction}.
+\noindent These elements are summarised in Figure~\ref{fig:construction}. Our notation follows Tukey's original definition except where we can be more precise or where terminology has changed over the last 40 years. 
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[scale=0.5]{components}
-  \caption{Construction of a boxplot.  Labels on the left give names for graphic elements, labels on the right give the corresponding distributional summaries.}
+  \includegraphics[scale=0.5]{components}
+  \caption{Construction of a boxplot.  Labels on the left give names for graphic elements, labels on the right give the corresponding summary statistics.}
   \label{fig:construction}
 \end{figure}
 
 There are a number of variations of these basic definitions. As well as variations in the definition of a quantile \citep{hyndman:1996}, some boxplots replace the extremes with fixed quantiles (e.g. min and max, 2\% and 98\%) or use multipliers other than 1.5 for the whiskers \citep{frigge:1989}. Others use the semi-interquartile ranges (e.g.\ $Q_1 - Q_2$) for asymmetric whiskers \citep{Rousseeuw1999}, explicit adjustments to the extremes to account for skewness \citep{hubert:2008}, alternative definitions of fences \citep{dumbgen:2007} or alternative definitions of outliers \citep{schwertman:2004,carter:2009}. Others have used additional graphical elements to display distributional features like kurtosis \citep{aslam:1991}, skewness and multimodality \citep{choonpradub:2005}, and mean and related error \citep{marmolejo-ramos:2010}.
 
-It is trivial to extend to the boxplot to work with weighted data: all you need is a quantile function that works with weighted. Weighted boxplots have been described in conjunction with spatial area weights \citep{willmott:2007}, distance from an area of interest weights \citep{dykes:2007} and survey weights \citep{survey,korn:1998}.
+One of appealing attribute of the boxplot is that if you have a rank function for the type of data you are dealing with, you can generate a boxplot. This means it's extend to the boxplot to work with weighted data. Weighted boxplots have been described in conjunction with spatial area weights \citep{willmott:2007}, distance from an area of interest weights \citep{dykes:2007} and survey weights \citep{survey,korn:1998}.
 
 % Description of algorithm: \citep{dewey:1992}
 
