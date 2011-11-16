@@ -24,26 +24,32 @@ rotational <- function(mat) {
     angle = angles,
     t(sapply(slices, function(x) boxplot.stats(x)$stats))
   )
-  plot(mat, xlab = "", ylab = "")
+  plot(mat, xlab = "", ylab = "", type = "n")
   points(0, 0, col = "red", cex = 3, pch = 20)
-
-  x <- stats$X1 * cos(stats$angle)
-  y <- stats$X1 * sin(stats$angle)
-  lines(x, y, col = "grey50")
-
-  x <- stats$X2 * cos(stats$angle)
-  y <- stats$X2 * sin(stats$angle)
-  lines(x, y)
-
-  x <- stats$X3 * cos(stats$angle)
-  y <- stats$X3 * sin(stats$angle)
-  lines(x, y, lwd = 2)
-
-  x <- stats$X4 * cos(stats$angle)
-  y <- stats$X4 * sin(stats$angle)
-  lines(x, y)
 
   x <- stats$X5 * cos(stats$angle)
   y <- stats$X5 * sin(stats$angle)
-  lines(x, y, col = "grey50")  
+  polygon(x, y, col = "grey90", border = NA)
+
+  x <- stats$X4 * cos(stats$angle)
+  y <- stats$X4 * sin(stats$angle)
+  polygon(x, y, col = "grey70", border = NA)
+
+  x <- stats$X3 * cos(stats$angle)
+  y <- stats$X3 * sin(stats$angle)
+  lines(x, y)
+
+  x <- stats$X2 * cos(stats$angle)
+  y <- stats$X2 * sin(stats$angle)
+  polygon(x, y, col = "grey90", border = NA)
+
+  x <- stats$X1 * cos(stats$angle)
+  y <- stats$X1 * sin(stats$angle)
+  polygon(x, y, col = "white", border = NA)
+  
+  points(mat)
+
+
+
+
 }

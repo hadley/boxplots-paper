@@ -51,20 +51,6 @@ quelplot <- function(x,y, xlim = NULL, ylim = NULL, xlab = "", ylab = "", D = 5)
   # Appendix A: construction of quelplots
   theta <- seq(0, 2 * pi, length = 100)
 
-  # Hinge
-  R1neg <- 2 * (1 - P1) * Em * sqrt((1 + R) / 2)
-  R1pos <- 2 * P1       * Em * sqrt((1 + R) / 2)
-  R2neg <- 2 * (1 - P2) * Em * sqrt((1 - R) / 2)
-  R2pos <- 2 * P2       * Em * sqrt((1 - R) / 2)
-
-  theta_1 <- ifelse(cos(theta) > 0, R1pos, R1neg) * cos(theta)
-  theta_2 <- ifelse(sin(theta) > 0, R2pos, R2neg) * sin(theta)
-  
-  X <- Tx + (theta_1 + theta_2) * Sx
-  Y <- Ty + (theta_1 - theta_2) * Sy
-
-  lines(X, Y, lwd = 2)
-
   # Fence
   R1neg <- 2 * (1 - P1) * Emax * sqrt((1 + R) / 2)
   R1pos <- 2 * P1       * Emax * sqrt((1 + R) / 2)
@@ -77,8 +63,22 @@ quelplot <- function(x,y, xlim = NULL, ylim = NULL, xlab = "", ylab = "", D = 5)
   X <- Tx + (theta_1 + theta_2) * Sx
   Y <- Ty + (theta_1 - theta_2) * Sy
 
-  lines(X, Y, col = "grey50", lwd = 2)
+  polygon(X, Y, col = "grey90", border = NA)
+
+  # Hinge
+  R1neg <- 2 * (1 - P1) * Em * sqrt((1 + R) / 2)
+  R1pos <- 2 * P1       * Em * sqrt((1 + R) / 2)
+  R2neg <- 2 * (1 - P2) * Em * sqrt((1 - R) / 2)
+  R2pos <- 2 * P2       * Em * sqrt((1 - R) / 2)
+
+  theta_1 <- ifelse(cos(theta) > 0, R1pos, R1neg) * cos(theta)
+  theta_2 <- ifelse(sin(theta) > 0, R2pos, R2neg) * sin(theta)
   
+  X <- Tx + (theta_1 + theta_2) * Sx
+  Y <- Ty + (theta_1 - theta_2) * Sy
+
+  polygon(X, Y, col = "grey70", border = NA)
+    
   # Regression lines
   x_grid <- seq(min(x), max(x), length = 2)
   y_pred <- Ty + (x_grid - Tx) * R * Sy / Sx
@@ -89,6 +89,7 @@ quelplot <- function(x,y, xlim = NULL, ylim = NULL, xlab = "", ylab = "", D = 5)
   lines(x_grid, y_pred)
   lines(x_pred, y_grid)
   
+  points(x, y)
 }
 
 # set.seed(1410)

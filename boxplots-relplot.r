@@ -112,9 +112,9 @@ relplot <- function(xv, yv, C = 36, epsilon = 1e-04,
         toty <- c(yv, yplot, yplot1)
         plot(totx, toty, type = "n", xlab = xlab, ylab = ylab, 
             ylim = ylim, xlim = xlim)
+        polygon(xplot, yplot, col = "grey90", border = NA)
+        polygon(xplot1, yplot1, col = "grey70", border = NA)
         points(xv, yv)
-        lines(xplot, yplot, col = "grey50", lwd = 2)
-        lines(xplot1, yplot1, col = "grey50", lwd = 2)
     }
     
     invisible(list(mest = c(txb, tyb), mvar = c(sxb, syb), mrho = rb))

@@ -30,20 +30,20 @@ points(x_stats[3], y_stats[3], col = "grey50", pch = 20, cex = 2)
 
 # The cross
 segments(x_stats[2], y_stats[3], x_stats[4], y_stats[3], 
-  col = "grey50", lwd = 2)
+  col = "grey50", lwd = 3)
 segments(x_stats[3], y_stats[2], x_stats[3], y_stats[4], 
-  col = "grey50", lwd = 2)
+  col = "grey50", lwd = 3)
 
 # Outer ranges
 segments(x_stats[2], y_stats[1], x_stats[4], y_stats[1], 
-  col = "grey50", lwd = 2)
+  col = "grey50", lwd = 3)
 segments(x_stats[2], y_stats[5], x_stats[4], y_stats[5], 
-  col = "grey50", lwd = 2)
+  col = "grey50", lwd = 3)
 
 segments(x_stats[1], y_stats[2], x_stats[1], y_stats[4], 
-  col = "grey50", lwd = 2)
+  col = "grey50", lwd = 3)
 segments(x_stats[5], y_stats[2], x_stats[5], y_stats[4], 
-  col = "grey50", lwd = 2)
+  col = "grey50", lwd = 3)
 
 dev.off()
 
@@ -65,23 +65,26 @@ pdf("images/2d-bagplot.pdf", width = 4, height = 4)
 par(mar = c(2.1, 2.1, .1, .1))
 bp <- aplpack::compute.bagplot(mat[, 1], mat[, 2])
 plot(mat, xlab = "", ylab = "", type = "n")
-polygon(bp$hull.bag, col = "grey80")
-polygon(bp$hull.loop)
+polygon(bp$hull.loop, col = "grey90", border = NA)
+polygon(bp$hull.bag, col = "grey70", border = NA)
 points(mat)
 
 dev.off()
 
 pdf("images/2d-hdr-5.pdf", width = 4, height = 4)
 par(mar = c(2.1, 2.1, .1, .1))
-hdr.boxplot.2d(mat[, 1], mat[, 2], h = rep(5, 2))
+hdr.boxplot.2d(mat[, 1], mat[, 2], h = rep(5, 2), 
+  shadecols = c("grey90", "grey70"))
 dev.off()
 
 pdf("images/2d-hdr-2-5.pdf", width = 4, height = 4)
 par(mar = c(2.1, 2.1, .1, .1))
-hdr.boxplot.2d(mat[, 1], mat[, 2], h = rep(2.5, 2))
+hdr.boxplot.2d(mat[, 1], mat[, 2], h = rep(2.5, 2),
+  shadecols = c("grey90", "grey70"))
 dev.off()
 
 pdf("images/2d-hdr-1.pdf", width = 4, height = 4)
 par(mar = c(2.1, 2.1, .1, .1))
-hdr.boxplot.2d(mat[, 1], mat[, 2], h = rep(1, 2))
+hdr.boxplot.2d(mat[, 1], mat[, 2], h = rep(1, 2),
+  shadecols = c("grey90", "grey70"))
 dev.off()

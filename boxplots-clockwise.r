@@ -23,20 +23,23 @@ clockwise <- function(mat) {
     t(sapply(projs, function(x) boxplot.stats(x[, 1])$stats))
   )
 
-
-  plot(mat, xlab = "", ylab = "")
-  points(0, 0, col = "red", cex = 3, pch = 20)
-
-  x <- c(stats$X2, stats$X4) * cos(stats$angle)
-  y <- c(stats$X2, stats$X4) * sin(stats$angle)
-  lines(x, y)
-  # ch <- chull(x, y)
-  # lines(x[ch], y[ch])
+  plot(mat, xlab = "", ylab = "", type = "n")
 
   x <- c(stats$X1, stats$X5) * cos(stats$angle)
   y <- c(stats$X1, stats$X5) * sin(stats$angle)
-  lines(x, y)
+  polygon(x, y, col = "grey90", border = NA)
   # ch <- chull(x, y)
   # ch <- c(ch, ch[1])
   # lines(x[ch], y[ch])
+
+  x <- c(stats$X2, stats$X4) * cos(stats$angle)
+  y <- c(stats$X2, stats$X4) * sin(stats$angle)
+  polygon(x, y, col = "grey70", border = NA)
+  # ch <- chull(x, y)
+  # lines(x[ch], y[ch])
+
+  
+  points(0, 0, col = "red", cex = 3, pch = 20)
+  points(mat)
+  
 }
