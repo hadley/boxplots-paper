@@ -13,7 +13,7 @@ section <- function(data, theta, width = pi / 12, rotate = T) {
 # plot(mat, pch = 20, col = "grey50")
 # pmat <- section(mat, -1 * pi / 4, pi / 2, rotate = F) 
 # points(pmat, col = "red")
-pmat2 <- section(mat, pi / 4, pi / 3, rotate = T) 
+# pmat2 <- section(mat, pi / 4, pi / 3, rotate = T) 
 # segments(pmat[, 1], pmat[, 2], pmat2[, 1], 0)
 
 rotational <- function(mat) {
@@ -48,8 +48,5 @@ rotational <- function(mat) {
   polygon(x, y, col = "white", border = NA)
   
   points(mat)
-
-
-
 
 }

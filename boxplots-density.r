@@ -75,6 +75,7 @@ pieces <- split(four$x, four$dist)
 pdf("images/four-denstrip.pdf", width = 4, height = 4)
 par(mar = c(2.1, 2.1, .1, .1))
 plot(c(0.5, 4.5), range(four$x), type = "n", axes = F, xlab = "", ylab = "")
+rect(-10, -10, 10, 10, col = "grey80")
 for(i in seq_along(pieces)) {
   denstrip(pieces[[i]], at = i, hor = F, width = 0.8, bw = 0.2)
 }
@@ -86,6 +87,7 @@ dev.off()
 pdf("images/four-sectioned.pdf", width = 4, height = 4)
 par(mar = c(2.1, 2.1, .1, .1))
 plot(c(0.5, 4.5), range(four$x), type = "n", axes = F, xlab = "", ylab = "")
+rect(-10, -10, 10, 10, col = "grey80")
 for(i in seq_along(pieces)) {
   sectioned.density(pieces[[i]], at = i + 0.25, hor = F, width = 0.18, 
     bw = 0.2)
