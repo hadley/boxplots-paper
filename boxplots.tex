@@ -25,18 +25,18 @@
 
 \section{Introduction}
 
-John Tukey introduced the box and whiskers plot as part of his toolkit for exploratory data analysis \citep{tukey:1970}, but they did not become widely known until formal publication \citep{tukey:1977}. The boxplot is a compact distributional summary, displaying less detail than a histogram or kernel density, but also taking up less space. Boxplots use robust summary statistics that are always located at actual data points, are quickly computable (originally by hand), and have no tuning parameters. They are particularly useful for comparing distributions across groups.
+John Tukey introduced the box and whiskers plot as part of his toolkit for exploratory data analysis \citep{tukey:1970}, but it did not become widely known until formal publication \citep{tukey:1977}. The boxplot is a compact distributional summary, displaying less detail than a histogram or kernel density, but also taking up less space. Boxplots use robust summary statistics that are always located at actual data points, are quickly computable (originally by hand), and have no tuning parameters. They are particularly useful for comparing distributions across groups.
 
 Today, over 40 years later, the boxplot has become one of the most frequently used statistical graphics, and is one of the few plot types invented in the 20th century that has found widespread adoption. Due to their elegance and practicality, boxplots have spawned a wealth of variations and enhancement. This paper pulls these together in one place, showing how the boxplot has evolved.
 
 We begin with a review of Tukey's definition and an overview of minor variations to both the underlying summary statistics and their visual representation. Section~\ref{sec:density} describes the richer displays of density facilitated by widespread desktop computing, and Section~\ref{sec:2d} explores how the boxplot has been extended to deal with 2d data. We conclude with some comments on the state of boxplot research and describe where future contributions are most needed.
 
-The the online supplementary materials include all R code \citep{R} used to create plots in this paper, and features original code for four boxplots (vase plot, quelplot, rotational boxplot, and bivariate clockwise boxplot) that previously lacked publicly available implementation.
+The online supplementary materials include all R code \citep{R} used to create plots in this paper, and features original code for four boxplots (vase plot, quelplot, rotational boxplot, and bivariate clockwise boxplot) that previously lacked publicly available implementation.
 
 \section{Tukey's boxplot}
 \label{sec:tukey}
 
-The basic graphic form of the boxplot, the range-bar, was established in the early 50's \citet[pg. 164]{spear:1952}. Tukey's contribution was to think deeply about appropriate summary statistics that worked for a wide range of data and to connect those to the visual components of the range bar. Today, what we call a boxplot is more closely related to what Tukey called a schematic plot, a box and whiskers plot with some special restrictions on the summary statistics used. % Tukey suggested using dashed lines for the more precise schematic plot, and solid lines for the box-and-whisker plot.
+The basic graphic form of the boxplot, the range-bar, was established in the early 1950's \citet[pg. 164]{spear:1952}. Tukey's contribution was to think deeply about appropriate summary statistics that worked for a wide range of data and to connect those to the visual components of the range bar. Today, what we call a boxplot is more closely related to what Tukey called a schematic plot, a box and whiskers plot with some special restrictions on the summary statistics used. % Tukey suggested using dashed lines for the more precise schematic plot, and solid lines for the box-and-whisker plot.
 
 The boxplot is made up of five components, carefully chosen to give a robust summary of the distribution of a dataset:
 
@@ -113,7 +113,7 @@ Within each plot, the distributions from left to right are: standard normal (n),
 
 A more sophisticated display is the sectioned density plot \citep{cohen:2006}, which uses both colour and space to stack a density estimate into a smaller area, hopefully without losing any information (not formally verified with a perceptual study). The sectioned density plot is similar in spirit to horizon graphs for time series \citep{reijner:2008}, which have been found to be just as readable as regular line graphs despite taking up much less space \citep{heer:2009}. The density strips of \citet{jackson:2008} provide a similar compact display that uses colour instead of width to display density. These methods are shown in Figure~\ref{fig:density-display}. 
 
-The summary plot \citep{potter:2010} is a similar idea. It combines an minimal boxplot with glyphs representing the first five moments (mean, standard deviation, skewness, kurtosis and tailings), and a sectioned density plot crossed with a violin plot (both colour and width are mapped to estimated density), and an overlay of a reference distribution. It is a rather busy display.
+The summary plot \citep{potter:2010} is a similar idea. It combines a minimal boxplot with glyphs representing the first five moments (mean, standard deviation, skewness, kurtosis and tailings), and a sectioned density plot crossed with a violin plot (both colour and width are mapped to estimated density), and an overlay of a reference distribution. It is a rather busy display.
 
 \begin{figure}[htbp]
   \centering
@@ -132,9 +132,9 @@ The highest density region (HDR) boxplot \citep{hyndman:1996a} is a compromise b
   \label{fig:hdr}
 \end{figure}
 
-Each author has suggested a different density estimate to use in conjunction with their new display, but there is no reason not to use any desired estimator. This is the price of density boxplots: the explosion of choices. Which density estimate should you use? Which choice of bandwidth or bin width is best? Bandwidth estimation is particularly challenge: if multiple groups are displayed, should each group get its own bandwidth, or should one bandwidth be used for all? \citet{kampstra:2008} suggests using the average of the per-group bandwidth estimates. The following two methods attempt a richer display of density without the cost of additional tuning parameters.
+Each author has suggested a different density estimate to use in conjunction with their new display, but there is no reason not to use any desired estimator. This is the price of density boxplots: the explosion of choices. Which density estimate should you use? Which choice of bandwidth or bin width is best? Bandwidth estimation is particularly challenging: if multiple groups are displayed, should each group get its own bandwidth, or should one bandwidth be used for all? \citet{kampstra:2008} suggests using the average of the per-group bandwidth estimates. The following two methods attempt a richer display of density without the cost of additional tuning parameters.
 
-The box-percentile plot \citep{esty:2003} displays an modified empirical cumulative density function (ECDF). The width of each box is proportional to the percentile, up to the 50th percentile, after which the width is proportional to one minus the the percentile. Lines mark the median and upper and lower quartiles. While this display of the ECDF contains all information about the distribution, it is not always easy to parse this data into an informative mental model. This is illustrated in Figure~\ref{fig:bpp}: without training, it is very difficult to tell that the fourth distribution is bimodal.
+The box-percentile plot \citep{esty:2003} displays a modified empirical cumulative density function (ECDF). The width of each box is proportional to the percentile, up to the 50th percentile, after which the width is proportional to one minus the the percentile. Lines mark the median and upper and lower quartiles. While this display of the ECDF contains all information about the distribution, it is not always easy to parse this data into an informative mental model. This is illustrated in Figure~\ref{fig:bpp}: without training, it is very difficult to tell that the fourth distribution is bimodal.
 
 \begin{figure}[htbp]
   \centering
@@ -201,16 +201,16 @@ Functional boxplots \citep{hyndman:2010,sun:2011} take the ideas of 2d boxplots 
 \section{Discussion}
 \label{sec:discussion}
 
-Boxplots were created to provide a succinct distributional summary that could easily be created by hand, and supported comparison across groups. As computers have become more prevalent and more powerful, it has become easier produce compact summaries that display more data. This has lead to an explosion of boxplot variations that stay true to the original goals to various extents, while supporting much richer display of the underlying distributions.
+Boxplots were created to provide a succinct distributional summary that could easily be created by hand, and supported comparison across groups. As computers have become more prevalent and more powerful, it has become easier  to produce compact summaries that display more data. This has led to an explosion of boxplot variations that stay true to the original goals to various extents, while supporting much richer display of the underlying distributions.
 
-There are a few places where the existing literature is weak. We wonder if the proposed boxplot variations do actually make it easier to compare distributions. Cleveland's hierarchy \citep{cleveland:1984} provides some guidance suggesting that techniques that use position, rather than colour, should be more effective, but there has been little empirical testing. Additionally, despite the number of 2d boxplots that have been developed, none attack the one of the original motivating problems of boxplots: comparing the distributions of multiple groups.
+There are a few places where the existing literature is weak. We wonder if the proposed boxplot variations do actually make it easier to compare distributions. Cleveland's hierarchy \citep{cleveland:1984} provides some guidance suggesting that techniques that use position, rather than colour, should be more effective, but there has been little empirical testing. Additionally, despite the number of 2d boxplots that have been developed, none attack one of the original motivating problems of boxplots: comparing the distributions of multiple groups.
 
-Boxplots have a rich history, and a promising future. We hope that this paper has illuminated the past, and suggest new avenues for the future.
+Boxplots have a rich history, and a promising future. We hope that this paper has illuminated the past, and suggested new avenues for the future.
 
 \section{Acknowledgements}
 \label{sec:acknowledgements}
 
-One of the biggest challenges of this paper was recreating all of the plots with consistent formatting. We're indebted to the authors who have provided implementations in R packages: {\tt hdrcde} \citep{hdrcde}, {\tt UsingR} \citep{UsingR}, {\tt beanplot} \citep{kampstra:2008}, {\tt denstrip} \citep{jackson:2008}, {\tt aplpack} \citep{aplpack} and {\tt lvplot}. Code for the relplot came from the website of Rand Wilcox. We wrote our own implementations of the vase plot and the quelplot (but only using non-robust estimators). Tufte's mid gap plot was drawn by hand.
+One of the biggest challenges of this paper was recreating all of the plots with consistent formatting. We're indebted to the authors who have provided implementations in R packages: {\tt hdrcde} \citep{hdrcde}, {\tt UsingR} \citep{UsingR}, {\tt beanplot} \citep{kampstra:2008}, {\tt denstrip} \citep{jackson:2008}, {\tt aplpack} \citep{aplpack} and {\tt lvplot}. Code for the relplot came from the website of Rand Wilcox. We wrote our own implementations of the vase plot and the quelplot (but only using non-robust estimators). Tufte's mid gap plot and Carr's colourful boxplot were drawn by hand.
 
 % bibtool -x boxplots.aux -c > references.bib 
 \bibliography{references}
