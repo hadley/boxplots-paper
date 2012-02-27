@@ -1,3 +1,4 @@
+% zip code.zip boxplots-*.r images/* lvplot/*
 \documentclass[oneside]{article}
 \usepackage{fullpage}
 \usepackage{mathtools}
@@ -31,6 +32,9 @@
 \end{abstract}
 
 \section{Introduction}
+
+% Add reference to Schmid book 178.  Thank Glen Barnett,
+% http://pubs.amstat.org/doi/pdf/10.1198/tas.2011.11012
 
 John Tukey introduced the box and whiskers plot as part of his toolkit for exploratory data analysis \citep{tukey:1970}, but it did not become widely known until formal publication \citep{tukey:1977}. The boxplot is a compact distributional summary, displaying less detail than a histogram or kernel density, but also taking up less space. Boxplots use robust summary statistics that are always located at actual data points, are quickly computable (originally by hand), and have no tuning parameters. They are particularly useful for comparing distributions across groups.
 
@@ -142,6 +146,8 @@ The highest density region (HDR) boxplot \citep{hyndman:1996a} is a compromise b
 Each author has suggested a different density estimate to use in conjunction with their new display, but there is no reason not to use any desired estimator. This is the price of density boxplots: the explosion of choices. Which density estimate should you use? Which choice of bandwidth or bin width is best? Bandwidth estimation is particularly challenging: if multiple groups are displayed, should each group get its own bandwidth, or should one bandwidth be used for all? \citet{kampstra:2008} suggests using the average of the per-group bandwidth estimates. The following two methods attempt a richer display of density without the cost of additional tuning parameters.
 
 The box-percentile plot \citep{esty:2003} displays a modified empirical cumulative density function (ECDF). The width of each box is proportional to the percentile, up to the 50th percentile, after which the width is proportional to one minus the the percentile. Lines mark the median and upper and lower quartiles. While this display of the ECDF contains all information about the distribution, it is not always easy to parse this data into an informative mental model. This is illustrated in Figure~\ref{fig:bpp}: without training, it is very difficult to tell that the fourth distribution is bimodal.
+
+Mountain plot: \citep{monti:1995}
 
 \begin{figure}[htbp]
   \centering
