@@ -1,0 +1,10 @@
+In regards to the content of the submitted manuscript, I have included my comments directly in the attached PDF document. In general most of my comments are suggested changes that I think would make the article more readable should a resubmission occur.
+
+Beyond my comments embedded in the PDF file, I want to mention that the following paper is similar in many ways, and should be cited:
+
+Kristin Potter. “Methods for Presenting Statistical Information: The Box Plot”, In Hans Hagen, Andreas Kerren, and Peter Dannenmann (Eds.), Visualization of Large and Unstructured Data Sets, GI-Edition Lecture Notes in Informatics (LNI), Vol. S-4, pp. 97-106, 2006.
+
+The submitted paper does have substantially more detail and citations, but I think that any revision of this article should make it clear what is the added value of this article.
+
+As a survey article it has some value in that it did lead me to locate and read several of the cited works (Tukey’s original EDA textbook and several previous American Statistician articles). Unfortunately I did not find the article itself that engaging or informative and I question how much additional information this manuscript contributes to the current body of knowledge.
+

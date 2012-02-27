@@ -1,0 +1,135 @@
+
+History
+=======
+
+I bridled at the title because it mangles history. On your own account Spear (1952) was there earlier, so your paper raises a question but does not answer it, of why the title is not then "60 years" etc. I got hold of her 1952 book and its 1969 sequel, which is the same stuff reworked, but there is no clue there of where range bars come from: naturally she may have thought them up herself, although the book does not seem very creative or original. Also, it seems that range bars had little discernible impact, although Tufte does refer to Spear.
+
+But beyond Spear there is a substantial literature in geography and climatology on dispersion diagrams that long pre-dates Spear. Crowe (1933) appears seminal and the text by Monkhouse and Wilkinson (1952, 1963, 1971), which was known to Tukey, gives many example references. Many of these displays show much more detail than box plots. These displays got into textbooks such as
+
+Gregory, S. 1963. Statistical methods and the geographer.  London: Longmans. (later editions 1968, 1973, 1978; publisher later Longman)
+
+Of course, it is no great surprise that the literature of geography and climatology is not in general well known to statisticians. But this graph did become a staple one among geographers. I must have learned about it more than 40 years ago when at high school.
+
+I've not stopped yet. Bibby (1986, pp.56, 59) gave even earlier references to their use by A.L. Bowley in his lectures about 1897 and to his recommendation (Bowley, 1910, p.62; 1952, p.73) to use minimum and maximum and 10, 25, 50, 75 and 90% points as a basis for graphical summary.
+
+Bibby, J. 1986.  Notes towards a history of teaching statistics.  Edinburgh: John Bibby (Books).
+
+Bowley, A.L. 1910.  An elementary manual of statistics.  London: Macdonald and Evans.         (seventh edition 1952)
+
+I would summarize like this. Tukey's invention of box plots was, strictly, a re-invention, although that in no way diminishes the credit he deserves. Whether the re-invention was conscious, unconscious or independent is not to me an interesting or important question, and now not an answerable one (unless there is an answer somewhere in the Tukey archives). But if 1970 marks the start of the modern history of box plots, there was an ancient history too, both within statistics and beyond.
+
+Although I think your paper if not changed would perpetuate an incorrect myth about boxplots, this point is easy to answer with extra references such as these.
+
+Logic
+=====
+
+A more awkward problem to me is that your paper conflates two different but related questions
+
+a. How has the boxplot idea evolved since 1970?
+
+b. What alternatives are there to the boxplot for identical or similar problems?
+
+The second question I see as more fundamental. The first question seems to commit you to considering when a boxplot stops being a boxplot. Concretely, if a boxplot minimally shows median, quartiles and extremes identifiably, then some of the displays you cite don't qualify. If a violin plot can be discussed, why not a density trace? Why not a dot plot or strip plot showing each data point in a pointillist histogram with added symbols for median and quartiles (certainly possible in Stata)? Why not a hybrid quantile-box plot as in Parzen (JASA 1979 and elsewhere).
+
+Also, the argument of the paper seems contradictory at heart. All the many variants of boxplots you cite show profound dissatisfaction with boxplots as showing too little. If subversion is imitation, then failure is success? Sounds backward to me.
+
+Tukey himself kept fiddling with the basic idea. The key reference appears to be Tukey JCGS 1993.
+
+Details
+=======
+
+p. means page, P. means paragraph, P.0 starts on the previous page and is completed on this one.
+
+p.1 Abstract "plot" in "boxplot plot" is redundant
+
+p.1 P.1 "actual data points" -- except when they are averaged (e.g. median with even sample size)
+
+p.1 P.2 "enhancement" add "s"
+
+p.2 P.2 "1950's" should be "1950s"
+
+p.2 P.3 "out-liers" omit hyphen
+
+p.3 P.1 $Q_1$ and $Q_2$ not defined precisely (although can be guessed)
+
+p.3 P.1 here and elsewhere "Rousseuw" is a typo for "Rousseeuw"
+
+p.3 P.2 punctuation should be cleaned up here (and also in p.3 P.3)
+
+p.4 Figure 2 caption should be "compared with" (also p.9 P.1)
+
+p.4 P.1 here and elsewhere McGill and Larsen should be McGill, Tukey and Larsen (esp. note mangled reference on p.15)
+
+p.4 P.2 circular variables: see also
+
+Graedel, T.E. 1977. The wind boxplot: An improved wind rose. Journal of Meteorology 16(4): 448-450.
+
+p.5 Figure 3 caption "displays" should be "display"
+
+p.5 P.0 "vice-versa" omit hyphen
+
+p.5 P.1 "every statistician" add "or data analyst" (more people analysing data outside statistics than statisticians!)
+
+p.5 P.1 "maintaing" should be "maintaining"
+
+p.5 P.1 here and elsewhere "multi-modality" needs no hyphen
+
+p.5 P.1 although it's obvious, does no harm to define $n$ as sample size
+
+p.6 P.1 here and elsewhere "leptikurtic" is a typo for "leptokurtic"
+
+p.6 P.1 note that Tukey (1977) used data from Rayleigh to underline that bimodal data would be obscured by a box plot; I wish I had remembered this example when writing Cox (2009)
+
+p.7 P.1 The strips seem reminiscent of one of the displays in Tukey and Tukey (1990) (which I have never seen; if you have a .pdf please send it to me!)
+
+Tukey, J.W. and P.A. Tukey. 1990. Strips displaying empirical distributions: I. Textured dot strips. Bellcore Technical Memorandum.
+
+p.7 P.2 "less-sophisticated" omit hyphen
+
+p.8 P.1 "the the" should be "the"
+
+p.8 P.1 a percentile just like a quartile is a value or a (possibly weighted) average of values; you mean the associated probability
+
+p.8 P.2 "eigths" is a typo for "eighths"
+
+p.9ff relevant material in Gower et 2011
+
+http://onlinelibrary.wiley.com/book/10.1002/9780470973196
+
+and Martinez et al. Exploratory
+
+http://www.pi-sigma.info/
+
+p.9 P.1 "in 2d dimensions" fix redundancy
+
+p.9 P.1 "becomes more complex" should be "become"
+
+p.9 P.1 "significant" should be "substantial"
+
+p.9 P.2 "first attempt" not so; one antecedent is in
+
+Tukey, J.W. 1970. Some further inputs. In Merriam, D.F. (ed.): Geostatistics: A colloquium. New York: Plenum Press, 163-174
+
+p.9 P.2 add polar smoothing: material and earlier references in
+
+http://www.stata-journal.com/sjpdf.html?articlenum=gr0021
+
+p.10 P.1 definitions ... follow
+
+p.10 P.3 omit comma after "Figure 10"
+
+p.11 P.0 for "topological" read "topographic"
+
+p.11 P.0 omit "but" in the same line as above
+
+p.12 Acknowledgements insert R.J. Hyndman
+
+p.13 Barrowman pages
+
+p.14 Becketti volume
+
+p.15 Jackson pages
+
+p.15 Potter: omit "2" after "Kniss"
+
+p.17 mangled reference to Hyndman, Einbeck and Wand

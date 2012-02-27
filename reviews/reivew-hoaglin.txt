@@ -1,0 +1,161 @@
+Over the years, I haven't follow developments related to boxplots very
+closely, so I'm glad that you have reviewed them.  Among the ones that
+I knew about, some seem to have more merit than others.  My comments
+focus more on the basic boxplot.
+
+I would be surprised if JWT was not aware of the range-bar, but I
+don't recall any reference to it in the early development of the
+box-and-whiskers plot.
+
+The box-and-whiskers plot arose as a way to display the 5-number
+summary, in which the five numbers were chosen mainly because they
+could fairly easily be found by hand (e.g., in a stem-and-leaf
+display): the largest and smallest values, the median, and the hinges.
+ The resistance (rather than robustness) of the median and hinges was
+a consideration, but not enough to support "carefully chosen."
+
+In addition to the fences that you mention (better known in EDA as the
+inner fences), The 1977 book also introduced "outer fences," at 3
+times the fourth-spread beyond the fourths.  The 1970 limited
+preliminary edition used "side values" and "three-halves values," at
+1.0 and 1.5 times the fourth-spread, but those flagged too many data
+values.
+
+My impression is that, in EDA at least, the extremes are the largest
+and smallest data values in the batch.  It introduces confusion to
+define "extremes" in some other way.  What's more, Figure 1 labels the
+ends of the whiskers as "lower extreme" and "upper extreme," whereas
+the list on page 2 (correctly) calls them "adjacent."  I'm hardly
+impartial, but I regard the book Understanding Robust and Exploratory
+Data Analysis (Hoaglin, Mosteller, and Tukey, eds., Wiley, 1983) as
+authoritative on EDA terminology and techniques.  Chapter 3, by John
+D. Emerson and Judith Strenio, is entitled "Boxplots and Batch
+Comparison."
+
+It's preferable to refer to data values that are outside the (inner)
+fences (and hence shown individually) as "outside values," rather than
+"outliers."  JWT was well aware that those fences would flag many
+values in samples of well-behaved data that would not qualify as
+"outliers."  The idea is to investigate any outside values (if
+possible) before deciding to call them "outliers."  Boris Iglewicz,
+JWT, and I studied the small-sample performance of the
+outlier-labeling rule based on the fences (Hoaglin, Iglewicz, and
+Tukey, 1986, JASA 81:991-999), and Boris and I did some further work
+on what constant to use in place of 1.5 when one wants to use that
+type of rule for outlier detection (Hoaglin and Iglewicz, 1987, JASA
+82:1147-1149).
+
+The variations in what to show at the ends of the boxplot are an
+unfortunate source of confusion.  Because of the absence of
+standardization, when I look at a boxplot, I can't necessarily be sure
+of what I'm seeing.
+
+In the paragraph at the bottom of page 3, I'm not sure how a "rank
+function" is defined.
+
+In the last line on page 3, the date of Tufte's book is 1983, not
+2001.  With 2001 instead of 1983, the date of Stock and Behrens at the
+top of page 4 doesn't make sense.  Also in that line, Tufte's book
+says "quartile plot," rather than "midgap plot."
+
+On page 4, in the paragraph that begins after Figure 2, don't you mean
+"there is NO visual display" at the end of the first line?
+
+In the third line of that paragraph, "McGill and Larsen" should be
+"McGill, Tukey and Larsen".
+
+Shouldn't that paragraph refer to Figure 3?
+
+At the bottom of page 4, I don't see the point of estimating the
+length of the whiskers.  I don't recall ever trying to do that from a
+boxplot, and I would not encourage anyone to do it.  I need to read
+the paper by Behrens et al.
+
+Section 3, line 2: Does every statistician now have a computer on
+their desk?  Maybe it's on their lap or in their pocket!  Omitting "on
+their desk" will keep the paper from becoming dated too quickly.
+
+It seems too strong to talk about "the failure to display
+multi-modality."  The boxplot was not intended for that purpose, which
+a stem-and-leaf display or a histogram often handles well.  It may not
+be a gain to burden the boxplot with "refinements" aimed at that and
+other uses.
+
+I need to look at the 1986 JASA paper by Hoaglin et al. and consider
+whether the number of "outside values" is actually excessive when n is
+large.
+
+Page 5, line -5: Should "rug that" be "rug"?
+
+Page 6, top: "Johnson curves" belong to more than one family.  To
+which family (or families) do these belong?
+
+Page 6, line 7: "leptikurtic" should be "leptokurtic".  Also in the
+caption of Figure 4.
+
+Page 7, line 2:  I don't recall seeing the fifth moment called
+"tailings" (I have seen it for mine waste).  Do you happen to know who
+introduced that term?
+
+Page 7, 2 lines above Figure 6: "extremes"
+
+In the caption for Figure 6, you could refer to "the fourth
+distribution" as "the mm distribution" (especially since "fourth" is
+used with a different meaning earlier).  Also in the caption for
+Figure 7.
+
+Page 8, line -2: "eigths" should be "eighths".
+
+Page 8, line -1: Should "smaller box" be "narrower box"?
+
+Section 4, line 2: "2d dimensions" should be "2 dimensions".
+
+Section 4, line 3 has "extremes", and "becomes" should be "become".
+
+Page 9, line -9: I'm not sure that I understand the meaning of "residuals".
+
+Page 10, line 4: "follows" should be "follow".
+
+Page 10, line -4: Remove comma after "Figure 10".
+
+Page 11, 3 lines above Figure 11: Insert a comma after "carefully" and
+remove "while".
+
+Page 11, line -4: change "take the ideas ... and extend them" to
+"extend the ideas ...".
+
+Page 12, para 2, line 3: Insert a comma after "guidance".
+
+Page 12, para 3, line 1: Remove the comma after "past".
+
+Page 12, line -4: I didn't find "Jochen Einbeck and Wand, 2010" in the
+references.
+
+Page 12, line -1: See my earlier comment on "mid-gap".
+
+Page 13: For Becketti and Gould, change "pages 149-149" to the correct
+volume and page numbers.
+
+Page 15: Add page numbers to reference for Jackson.
+
+Page 15, line -7: Change "T. J. W. McGill, R. and W. Larsen" to "R.
+McGill, J. W. Tukey, and W. A. Larsen"
+
+Page 15, line -4: "Kniss2"?
+
+Page 16: For Tukey 1970, it would be more accurate to say "limited
+preliminary edition, volume 1"
+
+Page 17, line 2: Page numbers are 247-263.
+
+Another early reference: J. W. Tukey (1972). Some graphic and
+semigraphic displays.  In T. A. Bancroft (ed.), Statistical Papers in
+Honor of George W. Snedecor.  Ames, IA: The Iowa State University
+Press, pp. 293-316.
+
+That's all!  Many of my comments are about picky little details, but
+some are more substantive.  I hope they are useful.
+
+Regards,
+
+David

@@ -1,0 +1,14 @@
+This paper details the history of the boxplot, one of the most widely used statistical graphics that summarizes distributional characteristics.  It should be of interest to a wide range of readers, from students who will learn what a boxplot is to senior statisticians who will probably learn about variations that might prove useful in their work.
+
+The writing and figures are clear but the paper could be improved by additional explanation for students.  For example, Figures 4-11 could use labels on one of the graphs, such as a simplified version of Figure 1.  Readers not familiar with notched boxplots, for example, will be unsure where the endpoints of the confidence interval are in Figure 3.  Similarly, several sentences are needed to explain what a kernel density is and how the bandwidth selection impacts a boxplot (e.g., Fig 4).
+In addition, including at least one applied example beyond the simple data shown in the figures would be instructive for working statisticians.  There are numerous published examples of how a boxplot visualization enhanced a descriptive or preliminary analysis of a large and/or complex dataset; the ecoregion analysis by Carr et al., cited here, would probably be a good choice.  The figures in the paper do illustrate how boxplots can identify important features of the distribution, such as multimodality, but seeing a real life example would help motivate the reader to use some of the more complex variations. By the way, this same paper also includes a binned 2D boxplot that should be cited in section 4.
+Minor corrections/comments:
+1.      P.2, line 21: “Spear (1952” should be “(Spear 1952”
+2.      P.4, line 47: explain what makes Carr’s 1998 adaptation more suitable (and a definition of “glyph” for the novice would help)
+3.      P.5, line 39: “maintaining” is misspelled
+4.      P.5, line 48: the vase plot in Fig 4 does not look symmetric
+5.      P.7, lines 4-8: text states that a summary plot combines several components, including a sectioned density plot crossed with a violin plot, but Fig 5 only shows a sectioned density plot. Please clarify if the text refers to a plot not shown in the figure.
+6.      P.7, Fig 5: this could use a legend or labels defining these complex plots.
+7.      P.8, line 21: typo “the the”
+8.      P.9, lines 38-40: Clarify what the 2d boxplot advantages are.
+9.      P.12, line 51: This sounds like boxplot code is not readily available, but basic boxplots can be done with a simple R function.  Code exists for horizontal boxplot examples from Carr & Pickle’s book Visualizing Data Patterns with Micromaps, CRC Press, 2010, on Carr’s web site.  This code allows for choice of box color but, as you point out, does not allow different colors above and below the median.  Because the audience for this journal tends to have more practical interests, is it worth moving this text to a brief section on available software?
