@@ -2,7 +2,7 @@
 \documentclass[oneside]{article}
 \usepackage{fullpage}
 \usepackage{mathtools}
-\usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \DeclareGraphicsExtensions{.png,.pdf}
 \graphicspath{{images/}}
 \usepackage{amssymb}
@@ -14,19 +14,18 @@
 \renewcommand\rmdefault{bch}
 \usepackage[small]{caption}
 \usepackage[small]{titlesec}
-\linespread{2.07} 
+% \linespread{2.07}
 
 \title{40 years of boxplots}
 \author{Hadley Wickham and Lisa Stryjewski}
 
 \raggedbottom
 
-\pdfminorversion=4
 \begin{document}
-\maketitle 
+\maketitle
 
-\begin{abstract} 
-  
+\begin{abstract}
+
   The boxplot plot has been around for over 40 years. This paper summarises the improvements, extensions and variations since Tukey first introduced his ``schematic plot'' in 1970. We focus particularly on richer displays of density and extensions to 2d.
 
 \end{abstract}
@@ -65,7 +64,7 @@ The boxplot is made up of five components, carefully chosen to give a robust sum
 
 \end{itemize}
 
-\noindent These elements are summarised in Figure~\ref{fig:construction}. Our notation follows Tukey's, except where we can be more precise or where common usage has changed over the last 40 years. 
+\noindent These elements are summarised in Figure~\ref{fig:construction}. Our notation follows Tukey's, except where we can be more precise or where common usage has changed over the last 40 years.
 
 \begin{figure}[htbp]
   \centering
@@ -91,8 +90,8 @@ Another variation aims to overcome an important problem with the boxplot: there 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width = 0.25\linewidth]{width-boxplot}% 
-  \includegraphics[width = 0.25\linewidth]{width-variable}% 
+  \includegraphics[width = 0.25\linewidth]{width-boxplot}%
+  \includegraphics[width = 0.25\linewidth]{width-variable}%
   \includegraphics[width = 0.25\linewidth]{width-notched}
   \caption{Boxplot variations showing 100, 1000, 10000, and 100000 numbers drawn from a standard normal distribution.  (Left) In a regular boxplot the only hint that the groups are different sizes is the number of outliers. (Middle) A variable-width boxplot shows the differences in group size.  (Right) The notched boxplots displays an inferentially meaningful quantity: the error associated with the estimate of the median.}
   \label{fig:width}
@@ -117,12 +116,12 @@ Figure~\ref{fig:density} demonstrates these density boxplots applied to 100 numb
   \includegraphics[width = 0.25\linewidth]{four-vase}%
   \includegraphics[width = 0.25\linewidth]{four-violin}%
   \includegraphics[width = 0.25\linewidth]{four-bean}
-  \caption{From left to right: box plot, vase plot, violin plot and bean plot.  
+  \caption{From left to right: box plot, vase plot, violin plot and bean plot.
 Within each plot, the distributions from left to right are: standard normal (n), right-skewed (s), leptikurtic (k), and bimodal (mm). A normal kernel and bandwidth of 0.2 are used in all plots for all groups.}
   \label{fig:density}
 \end{figure}
 
-A more sophisticated display is the sectioned density plot \citep{cohen:2006}, which uses both colour and space to stack a density estimate into a smaller area, hopefully without losing any information (not formally verified with a perceptual study). The sectioned density plot is similar in spirit to horizon graphs for time series \citep{reijner:2008}, which have been found to be just as readable as regular line graphs despite taking up much less space \citep{heer:2009}. The density strips of \citet{jackson:2008} provide a similar compact display that uses colour instead of width to display density. These methods are shown in Figure~\ref{fig:density-display}. 
+A more sophisticated display is the sectioned density plot \citep{cohen:2006}, which uses both colour and space to stack a density estimate into a smaller area, hopefully without losing any information (not formally verified with a perceptual study). The sectioned density plot is similar in spirit to horizon graphs for time series \citep{reijner:2008}, which have been found to be just as readable as regular line graphs despite taking up much less space \citep{heer:2009}. The density strips of \citet{jackson:2008} provide a similar compact display that uses colour instead of width to display density. These methods are shown in Figure~\ref{fig:density-display}.
 
 The summary plot \citep{potter:2010} is a similar idea. It combines a minimal boxplot with glyphs representing the first five moments (mean, standard deviation, skewness, kurtosis and tailings), and a sectioned density plot crossed with a violin plot (both colour and width are mapped to estimated density), and an overlay of a reference distribution. It is a rather busy display.
 
@@ -138,7 +137,7 @@ The highest density region (HDR) boxplot \citep{hyndman:1996a} is a compromise b
 
 \begin{figure}[htbp]
   \centering
-    \includegraphics[width = 0.25\linewidth]{four-hdr}%    
+    \includegraphics[width = 0.25\linewidth]{four-hdr}%
   \caption{The highest density region boxplot for the same four distributions as Figure~\ref{fig:density}. The multimodality in the fourth distribution is easy to spot.}
   \label{fig:hdr}
 \end{figure}
@@ -225,7 +224,7 @@ Boxplots have a rich history, and a promising future. We hope that this paper ha
 
 One of the biggest challenges of this paper was recreating all of the plots with consistent formatting. We're indebted to the authors who have provided implementations in R packages: {\tt hdrcde} \citep{hdrcde}, {\tt UsingR} \citep{UsingR}, {\tt beanplot} \citep{kampstra:2008}, {\tt denstrip} \citep{jackson:2008}, {\tt aplpack} \citep{aplpack} and {\tt lvplot}. Code for the relplot came from the website of Rand Wilcox. We wrote our own implementations of the vase plot and the quelplot (but only using non-robust estimators). Tufte's mid gap plot and Carr's colourful boxplot were drawn by hand.
 
-% bibtool -x boxplots.aux -c > references.bib 
+% bibtool -x boxplots.aux -c > references.bib
 \bibliography{references}
 
 \end{document}
